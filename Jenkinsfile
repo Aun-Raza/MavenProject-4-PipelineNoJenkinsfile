@@ -36,5 +36,12 @@ pipeline {
                 }
             }
         }
+        stage("Docker Push") {
+               steps {
+                   script {
+                            sh "docker push aunreza/maven_demo:${env.BUILD_ID}"
+                         }
+               }
+          }
     }
 }
